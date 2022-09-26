@@ -17,7 +17,7 @@ const Reviews = ()=>{
                     return <li key={review.review_id}>
                         <h3>{review.title}</h3>
                         <p>{review.category}</p>
-                        <p>{review.body}</p>
+                        <p>{review.body}r</p>
                     </li>
                 })}
             </ol>
