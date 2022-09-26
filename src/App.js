@@ -11,7 +11,7 @@ class App extends Component {
         <Header />
         <Nav />
         <Routes>
-          <Route path="Reviews" element={<Reviews />}></Route>
+          <Route path="Reviews" element={<Reviews />}>r</Route>
         </Routes>
       </div>
     );
