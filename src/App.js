@@ -4,6 +4,7 @@ import Reviews from "./components/Reviews";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
+
 class App extends Component {
   render() {
     return (
@@ -11,7 +12,8 @@ class App extends Component {
         <Header />
         <Nav />
         <Routes>
-          <Route path="Reviews" element={<Reviews />}>r</Route>
+          <Route path="Reviews" element={<Reviews />}></Route>
+          <Route path="reviews/:categories_slug" element={<Reviews />}></Route>
         </Routes>
       </div>
     );
