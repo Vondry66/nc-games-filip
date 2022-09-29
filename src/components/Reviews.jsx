@@ -20,7 +20,6 @@ const Reviews = ()=>{
                 {reviews.map((review)=>{
                     return <li key={review.review_id}>
                        <Link to={`/reviews/single/${review.review_id}`}>{review.title}</Link>
-                        <h3>{review.title}</h3>
                         <p className="p">{review.category}</p>
                         <p className="p">{review.body}</p>
                         <p className="p">Made on :{review.created_at}</p>
