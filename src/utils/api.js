@@ -5,17 +5,20 @@ const gamesApi = axios.create({
 });
 
 export const getReviews = (categories_slug) => {
-  return gamesApi
-    .get(`/reviews`, {
-      params: { category: categories_slug },
-    })
-    .then((res) => {
-      return res.data;
-    });
+  return gamesApi.get(`/reviews?category=${categories_slug}`).then((res) => {
+    return res.data;
+  });
 };
 
 export const getCategory = () => {
   return gamesApi.get("/categories").then((res) => {
     return res.data.categories;
+  });
+};
+
+export const getSingleReview = (review_id) => {
+  return gamesApi.get(`/reviews/${review_id}`).then((res) => {
+    console.log(res.data.review);
+    return res.data.review;
   });
 };
