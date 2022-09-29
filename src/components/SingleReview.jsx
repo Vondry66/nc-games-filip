@@ -9,12 +9,13 @@ const SingleReview=()=>{
     useEffect(()=>{
         getSingleReview(review_id).then((rev)=>{
             setReview(rev)
-            console.log(review)
+            
         })
     },[review_id])
     return(
         <section>
             <h2>{review.title}</h2>
+            
             <p className="p">Written by:{review.owner}</p>
             <img className="img" src={review.review_img_url} alt="Picture of " />
             <p className="p">{review.category}</p>
