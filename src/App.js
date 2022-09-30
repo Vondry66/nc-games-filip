@@ -19,10 +19,6 @@ class App extends Component {
             path="/reviews/single/:review_id"
             element={<SingleReview />}
           ></Route>
-          <Route
-            path="/reviews/comment/:review_id/comments"
-            element={<Comments />}
-          ></Route>
         </Routes>
       </div>
     );
