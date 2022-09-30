@@ -1,8 +1,9 @@
-import axios from "axios"
 import { useEffect,useState} from "react"
 import { useParams } from "react-router-dom"
 import Category from "./Category"
 import { getReviews } from "../utils/api"
+import SingleReview from "./SingleReview"
+import { Link } from "react-router-dom"
 const Reviews = ()=>{
     const {categories_slug}=useParams()
     const [reviews,setReviews]=useState([])
@@ -18,7 +19,7 @@ const Reviews = ()=>{
             <ol>
                 {reviews.map((review)=>{
                     return <li key={review.review_id}>
-                        <h3>{review.title}</h3>
+                       <Link to={`/reviews/single/${review.review_id}`}>{review.title}</Link>
                         <p className="p">{review.category}</p>
                         <p className="p">{review.body}</p>
                         <p className="p">Made on :{review.created_at}</p>
