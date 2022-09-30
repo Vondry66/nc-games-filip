@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import SingleReview from "./components/SingleReview";
-import Comments from "./components/Comments";
+
 class App extends Component {
   render() {
     return (
