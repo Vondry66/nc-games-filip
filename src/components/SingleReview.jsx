@@ -24,7 +24,7 @@ function ReviewCard () {
             )
             setHasVoted(true)
         }else {
-            setVoteMessage('Sorry you can only vote once')
+            setVoteMessage('Sorry, you already voted!')
         }
         
     }

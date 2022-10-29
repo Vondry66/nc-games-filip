@@ -24,7 +24,7 @@ function Comments () {
             }, 2500);
             
         }else {
-            setDeleteMessage('You need to be logged in to delete your comment')
+            setDeleteMessage('Please log in before deleting')
         }
     }
 

@@ -37,7 +37,7 @@ export const getComments = (review_id) => {
     return res.data;
   });
 };
-export const postComment = (review_id, author, body) => {
+  export const postComment = (review_id, author, body) => {
   return gamesApi
     .post(`/reviews/${review_id}/comments`, { username: author, body: body })
     .then((res) => {

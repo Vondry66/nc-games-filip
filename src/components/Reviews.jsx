@@ -22,7 +22,7 @@ function AllReviews () {
    const handleOrder = (e) => {
     if (orderBy === 'asc'){
         setOrderBy('desc')
-        setButtonText('Order Desc?')
+        setButtonText('Order Desc')
     }else {
         setOrderBy('asc')
         setButtonText('Order Asc')

@@ -7,7 +7,7 @@ import Categories from "./components/Category";
 import Users from "./components/Users";
 import Home from "./components/Home";
 
-function App() {
+  function App() {
   return (
    
       <div className="App">

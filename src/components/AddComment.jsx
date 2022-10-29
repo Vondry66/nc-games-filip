@@ -20,7 +20,7 @@ function AddComment () {
             postComment(review_id, loggedInUser.username, newComment)
             setNewComment('')
         } else {
-            setCommentMessage('You need to be logged in to post a comment')
+            setCommentMessage('Please log in before posting')
         }
     }
             
