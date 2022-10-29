@@ -1,27 +1,41 @@
-.App {
+/* .App {
   text-align: center;
+  font-family: "Merienda", sans-serif;
 }
-.img{
+.body{
+  font-family: "Merienda", sans-serif;
+}
+img{
   width: 360px;
   height: 340px;
 }
-a:link,
-a:visited {
-  background-color: #2aae06;
-  color: white;
-  padding: 14px 25px;
-  margin: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
+
 
 a:hover,
 a:active {
   background-color: rgb(200, 175, 9);
 }
-
+.p{
+  margin: 4px;
+  box-shadow:0 0 6px #a08129;
+  padding: 9px;
+}
+.count{
+  padding: 10px;
+  box-shadow:0 0 8px #65a30d;
+}
+.Comments{
+  padding-left: 60px;
+}
+.com1{
+margin-left: 160px;
+}
+.com2{
+  margin-right: 300px;
+}
 .votes {
+  width: 80px;
+  height: 30px;
     color: aliceblue;
     will-change: background-color;
     transition: background-color 0.3s, transform 0.3s;
@@ -38,8 +52,21 @@ a:active {
    
   }
 
-
-
+.Cmnt{
+  text-align: center;
+  padding: 20px;
+  font-family: "Merienda", sans-serif;
+}
+.AddInput{
+  
+  width: 160px;
+  height: 120px;
+  text-align: center;
+  position: inherit;
+  padding-left: 660px;
+  color: #000000;
+  box-shadow: 0 0 20px #4b5563;
+}
 
 .App-header {
   
@@ -58,4 +85,111 @@ a:active {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+} */
+
+.App {
+  text-align: center;
 }
+body{
+  background-image: linear-gradient(to right, #fca5a5, #fde047,#bef264);
+  background-color: #e2dad4; 
+} 
+.login{
+  font-family: "Merienda", sans-serif;
+  background-color: #087a24;
+  color: #ddd;
+  border: 0px;
+  float: right;
+  padding: 14px;
+  box-shadow: 0  8px 8px #022b0c;
+  
+}
+  
+.navBarTitle{
+  background-image: linear-gradient(to right, #f87171, #facc15,#bef264);;
+  font-family: "Merienda", sans-serif;
+} 
+.topNavBar {
+  background-image: linear-gradient(to right, #fca5a5, #fef08a,#bef264);; 
+  /* border : double black;
+  border-width: thick; 
+   box-shadow: 5px 10px #FBEEC1; */
+  list-style: none;
+  display: grid;
+  font-family: 'Amiri', serif;
+  font-size: larger;
+  color: black;
+  grid-template-columns: repeat(4,1fr);
+  list-style-type: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0  8px 8px #022b0c;
+     
+
+} 
+ .topNavBar Link {
+  float: left;
+  
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Inter Tight', sans-serif;
+  
+ 
+} 
+.topNavBar Link:hover {
+  background-color: #ddd;
+  color: black;
+
+} 
+
+ .container{
+  position: relative;
+  text-align: center;
+  color: white;
+} 
+
+
+ul {
+  list-style-type: none; 
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  
+} 
+ img {
+  border-radius: 4px;
+  border-radius: 30%;
+  padding: 5px;
+  width: 150px;
+  height: auto;
+
+} 
+.comments{
+  font-family: "Merienda", sans-serif;
+}
+  a:link,
+a:visited {
+  background-color: #1eb8a3;
+  color: white;
+  padding: 8px 12px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0  8px 8px #022b0c;
+}
+h1{
+  background-image: linear-gradient(to right, #f87171, #facc15,#bef264);;
+  font-size: 40px;
+  font-family: "Merienda", sans-serif;
+  
+  color: #FBEEC1;
+  text-shadow: 2px 2px 5px black;
+} 
+ .element::before{
+  content : "♣";
+}
+.element::after{
+  content : "♠";
+} 

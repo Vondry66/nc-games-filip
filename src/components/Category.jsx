@@ -16,7 +16,7 @@ function Categories () {
     }, [categories])
     return (
         <section>
-               <h3 className="navBarTitle">What would you like to see today?</h3>
+               <h3 className="navBarTitle">What would you like to see today??</h3>
             <nav className="topNavBar">
             {categories.map(category => {
                 return <li key={category.slug}>

@@ -24,7 +24,7 @@ function Comments () {
             }, 2500);
             
         }else {
-            setDeleteMessage('You need to be logged in to delete your comment')
+            setDeleteMessage('Please log in before deleting')
         }
     }
 
@@ -36,7 +36,7 @@ function Comments () {
     }, [review_id, allComments])
 
     return (
-        <section>
+        <section className='comments'>
             <ul>
                 {allComments.map(comments => {
                     return <li key={comments.comment_id}><h3>Comment by: {comments.author}</h3><p>{comments.body}</p><p>Posted : {moment(comments.created_at).format('dddd, MMMM Do YYYY')}</p><p>Votes : {comments.votes}</p>

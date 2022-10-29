@@ -1,52 +1,61 @@
-import axios from "axios";
-import { useEffect,useState } from "react";
-import { useParams } from "react-router-dom";
-import { getSingleReview } from "../utils/api";
-import { patchVotes } from "../utils/api";
-import Comments from "./Comments";
 
-const SingleReview=()=>{
-    const[review,setReview]=useState([])
-    const{review_id}=useParams()
-    const[votes,setVotes]=useState(0)
-    
-    useEffect(()=>{
-       
-       
-        getSingleReview(review_id).then((rev)=>{
-            setReview(rev)
+
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import { reviewByID } from "../utils/api"
+import { voteOnReview } from "../utils/api"
+import Comments from "./Comments"
+
+
+
+function ReviewCard () {
+
+    const [singleReview, setSingleReview] =useState({})
+    const [incVotes, setIncVotes] = useState(null)
+    const [hasVoted, setHasVoted] = useState(false)
+    const [voteMessage, setVoteMessage] = useState('')
+
+    const handleIncVotes = (review_id) => {
+        if (!hasVoted){
+            voteOnReview(review_id)
+            setIncVotes((currVotes) => 
+            currVotes + 1
             
-        })
-    },[review_id])
-
-    const handleVotes=()=>{ 
-        setVotes((currVotes)=>{
-
-        return currVotes + 1
-      
-        })
-        patchVotes(review_id).then((res)=>{
-           
-        })
-    
+            )
+            setHasVoted(true)
+        }else {
+            setVoteMessage('Sorry, you already voted!')
+        }
+        
     }
-    
-    return(
+
+    const {review_id} = useParams()
+
+
+    useEffect(() => {
+        reviewByID(review_id)
+
+        .then((reviews) => {
+
+            setSingleReview(reviews)
+            setIncVotes(reviews.votes)
+        })      
+    }, [review_id])
+console.log(singleReview)
+
+    return (
         <section>
-            <h2>{review.title}</h2>
-            <p className="p">Written by:{review.owner}</p>
-            <img className="img" src={review.review_img_url} alt="Picture of the game" />
-            <p className="p">Category:{review.category}</p>
-            <p className="p">{review.review_body}</p>
-            <p className="p">Made on :{review.created_at}</p>
-            <p className="count">Number of comments:{review.comment_count}</p>
-            <Comments />
-            <p className="count">Votes:{review.votes + votes}</p>
-            <button className="votes" onClick={()=>handleVotes(review.review_id)}>
-            <span className="votes">{`Like | ${votes}`}</span></button>
-            </section>
+        <h2>Username : {singleReview.owner}</h2>
+        <p>Review title : {singleReview.title}</p>
+        <p>Game designer : {singleReview.designer}</p>
+        <p>{singleReview.review_body}</p>
+        <button onClick={() => handleIncVotes(singleReview.review_id)}>{incVotes}<span aria-label="votes for this review"> 👍</span></button><p>{voteMessage}</p>
+        <p>Game category : {singleReview.category}</p>
+        <img className="img" src={singleReview.review_img_url} alt={singleReview.owner}/>
+        <Comments />
+
+        </section>
     )
 }
 
-
-export default SingleReview
+export default ReviewCard
