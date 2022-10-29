@@ -1,28 +1,32 @@
-import React, { Component } from "react";
 import "./App.css";
-import Reviews from "./components/Reviews";
-import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Nav from "./components/Nav";
-import SingleReview from "./components/SingleReview";
+import { Routes, Route } from "react-router-dom";
+import ReviewCard from "./components/SingleReview";
+import AllReviews from "./components/Reviews";
+import Categories from "./components/Category";
+import Users from "./components/Users";
+import Home from "./components/Home";
 
-class App extends Component {
-  render() {
-    return (
+function App() {
+  return (
+   
       <div className="App">
         <Header />
-        <Nav />
+        <Categories />
         <Routes>
-          <Route path="/reviews" element={<Reviews />}></Route>
-          <Route path="/reviews/:categories_slug" element={<Reviews />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/reviews" element={<AllReviews />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/reviews/:category" element={<AllReviews />} />
           <Route
-            path="/reviews/single/:review_id"
-            element={<SingleReview />}
-          ></Route>
+            path="/reviews/singleReview/:review_id"
+            element={<ReviewCard />}
+          />
+          <Route path="/users" element={<Users />} />
         </Routes>
       </div>
-    );
-  }
+    
+  );
 }
 
 export default App;
